@@ -10,6 +10,8 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import HealingIcon from '@mui/icons-material/Healing';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import CloseIcon from '@mui/icons-material/Close';
 
 export{
     HomeIcon,
@@ -23,5 +25,7 @@ export{
     ListAltIcon,
     HealingIcon,
     ExpandLessIcon,
-    ExpandMoreIcon
+    ExpandMoreIcon,
+    FormatListBulletedIcon,
+    CloseIcon
 }

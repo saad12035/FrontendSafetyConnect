@@ -1,20 +1,85 @@
 //Core imports
-import {Badge, Box, Grid, InputAdornment,Typography} from "@mui/material";
+import {
+    Badge,
+    Box,
+    Divider,
+    Drawer,
+    Grid, IconButton,
+    InputAdornment,
+    List,
+    ListItem,
+    ListItemButton, ListItemIcon, ListItemText,
+    Typography
+} from "@mui/material";
 
 //Local imports
 import {HBox, SBox, SHeaderAppBar, SHeaderToolbar,HTextField} from "./Layout.style";
-import {NotificationsOutlinedIcon, SearchIcon, SettingsOutlinedIcon} from "../utils/icons";
-
-
+import {
+    CloseIcon,
+    FormatListBulletedIcon,
+    NotificationsOutlinedIcon,
+    SearchIcon,
+    SettingsOutlinedIcon
+} from "../utils/icons";
+import {useState} from "react";
+import { AssignmentIcon} from '../utils/icons';
 
 
 const AppNavbar = () => {
+    const [open, setOpen] = useState(false);
+
+    const handleDrawerOpen = () => {
+        setOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+        setOpen(false);
+    };
+
     return (
         <Grid item>
             <SHeaderAppBar position="static" color="inherit" elevation={0}>
                 <SHeaderToolbar disableGutters>
                     <Grid container>
-                        <Grid item xs={12} sm={3} lg={3}>
+                            <Box
+                                component={Grid}
+                                item
+                                xs={3}
+                                sx={{
+                                    display: {xs: 'grid', sm: 'none'},
+                                }}
+                            >
+                                <IconButton
+                                    color="secondary"
+                                    edge="start"
+                                    onClick={handleDrawerOpen}
+                                >
+                                    <FormatListBulletedIcon/>
+                                </IconButton>
+                                <Drawer
+                                    variant="persistent"
+                                    anchor="left"
+                                    open={open}
+                                >
+                                    <IconButton onClick={handleDrawerClose}>
+                                        <CloseIcon/>
+                                    </IconButton>
+                                    <Divider />
+                                    <List>
+                                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                                            <ListItem key={text} disablePadding>
+                                                <ListItemButton>
+                                                    <ListItemIcon>
+                                                        <AssignmentIcon/>
+                                                    </ListItemIcon>
+                                                    <ListItemText primary={text} />
+                                                </ListItemButton>
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </Drawer>
+                            </Box>
+                        <Grid item xs={6} sm={3} lg={3}>
                             <HBox flexWrap="wrap">
                                 <Typography fontWeight="400" variant="h5" color="secondary">Safety Connect</Typography>
                             </HBox>

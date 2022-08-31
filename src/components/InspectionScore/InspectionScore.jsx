@@ -65,6 +65,7 @@ function InspectionScore() {
                             inspectionDetails.map((item,value)=>{
                                 return(
                                     <ListItem
+                                        key={value}
                                         secondaryAction={
                                             <CCheckbox
                                                 icon={<RadioButtonUncheckedIcon />}

@@ -101,16 +101,23 @@ const projectItems = [
 ]
 
 
-
 function Landing() {
 
     function getItemDetailsDesktop() {
         return (
-            itemsDetails.map((item, value) => {
+            itemsDetails.map((item,value) => {
                 return (
-                    <>
-                        {(item.title === "Due Date:") ? <><Grid item md={12}><Divider
-                            style={{width: "100%"}}/></Grid>  </> : null}
+                    <React.Fragment key={value}>
+                        {
+                            (item.title === "Due Date:") ?
+                                <>
+                                    <Grid item md={12}>
+                                        <Divider style={{width: "100%"}}/>
+                                    </Grid>
+                                </>
+                                :
+                                null
+                        }
                         <Grid item md={0.2}/>
                         <Grid item>
                             <Typography color="black" variant="body2" fontWeight="bold">
@@ -122,16 +129,16 @@ function Landing() {
                                 {item.value}
                             </Typography>
                         </Grid>
-                    </>
+                    </React.Fragment>
                 );
             }));
     }
 
     function getItemDetailsMobile() {
         return (
-            itemsDetails.map((item) => {
+            itemsDetails.map((item,value) => {
                 return (
-                    <>
+                    <React.Fragment key={value}>
                         <Grid item xs={6}>
                             <Typography textAlign="start" color="black" variant="body2" fontWeight="bold">
                                 {item.title}
@@ -145,16 +152,16 @@ function Landing() {
                         <Grid item xs={12} mt={1} mb={2}>
                             <Divider/>
                         </Grid>
-                    </>
+                    </React.Fragment>
                 );
             }));
     }
 
     function getSubmissionDetailsDesktop() {
         return (
-            submissionDetails.map((item, value) => {
+            submissionDetails.map((item,value) => {
                 return (
-                    <>
+                    <React.Fragment key={value}>
                         {(item.title === "Status: ") ? <><Grid item md={12}><Divider
                             style={{width: "100%"}}/></Grid>  </> : null}
                         <Grid item>
@@ -163,34 +170,34 @@ function Landing() {
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Typography color="grey.600" variant="body2">
+                            <Typography color="grey.600" variant="subtitle1">
                                 {item.inputType}
                             </Typography>
                         </Grid>
-                    </>
+                    </React.Fragment>
                 );
             }));
     }
 
     function getSubmissionDeatilsMobile() {
         return (
-            submissionDetails.map((details) => {
+            submissionDetails.map((details,value) => {
                 return (
-                    <>
+                    <React.Fragment key={value}>
                         <Grid item xs={6}>
                             <Typography textAlign="start" color="black" variant="body2" fontWeight="bold">
                                 {details.title}
                             </Typography>
                         </Grid>
                         <Grid item xs={6}>
-                            <Typography textAlign="end" color="grey.600" variant="body2">
+                            <Typography textAlign="end" color="grey.600" variant="subtitle1">
                                 {details.inputType}
                             </Typography>
                         </Grid>
                         <Grid item xs={12} mt={1} mb={2}>
                             <Divider/>
                         </Grid>
-                    </>
+                    </React.Fragment>
                 );
             })
         );
@@ -226,17 +233,17 @@ function Landing() {
                             <NestedList name="Team Members" subList={projectItems}/>
                             <Grid container justifyContent="flex-end" spacing={1}>
                                 <Grid item>
-                                    <Avatar sx={{ bgcolor: "success.700" }}>
+                                    <Avatar sx={{bgcolor: "success.700"}}>
                                         <Typography>+3</Typography>
                                     </Avatar>
                                 </Grid>
                                 <Grid item>
-                                    <Avatar sx={{ bgcolor: "primary.custom" }}>
+                                    <Avatar sx={{bgcolor: "primary.custom"}}>
                                         <Typography>+</Typography>
                                     </Avatar>
                                 </Grid>
                             </Grid>
-                            <Divider sx={{width: "100%" ,marginTop:2}}/>
+                            <Divider sx={{width: "100%", marginTop: 2}}/>
                         </Grid>
                     </Grid>
                 </Paper>

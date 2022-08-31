@@ -20,9 +20,9 @@ function BreadCrumbs() {
     return (
         <>
             {
-                arr.map((item) => {
+                arr.map((item,value) => {
                     return (
-                        <Grid item>
+                        <Grid key={value} item>
                             <Typography variant="subtitle2" color={item.color}>{item.text}</Typography>
                         </Grid>
                     );

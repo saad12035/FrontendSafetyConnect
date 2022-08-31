@@ -114,8 +114,8 @@ function Landing() {
     }
     return (
         <HomeGrid container>
-            <Box component={Grid} item display={{xs: "none", lg: "grid"}} lg={2.5}>
-                <Paper style={{minHeight: 900}} elevation={3}>
+            <Box component={Grid} mb={5} item display={{xs: "none", lg: "grid"}} lg={2.5}>
+                <Paper style={{minHeight: 600}} elevation={3}>
                     <Grid container padding="20px">
                         <Grid item md={2} ml={4} mt={2}>
                             <Avatar alt="Remy Sharp"/>
@@ -159,7 +159,7 @@ function Landing() {
             </Box>
             <Grid item xs={0} lg={0.2}/>
             <Grid item xs={12} lg={9.2}>
-                <Grid container display={{xs: "none", lg: "grid"}} spacing={{sm: 4}}>
+                <Grid container mb={5} display={{xs: "none", lg: "grid"}} spacing={{sm: 4}}>
                     <Grid item sm={12}>
                         <Paper style={{minHeight: 100, padding: 20}} elevation={0}>
                             <Typography variant="h4" color="primary.custom"> Audit and Inspection</Typography>
@@ -209,7 +209,7 @@ function Landing() {
                         </Paper>
                     </Grid>
                 </Grid>
-                <Grid container width="100%" display={{xs: "grid", lg: "none"}}>
+                <Grid container width="100%" mb={5} display={{xs: "grid", lg: "none"}}>
                     <Paper style={{minHeight: 100}} elevation={3}>
                         <Grid item xs={12}>
                             <Typography variant="h5" textAlign="center" fontWeight="500" color="primary.custom">Electrical

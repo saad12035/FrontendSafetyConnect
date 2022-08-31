@@ -1,10 +1,9 @@
 import {Badge, Box, Grid, InputAdornment,Typography} from "@mui/material";
 import {HBox, SBox, SHeaderAppBar, SHeaderToolbar,HTextField} from "./Layout.style";
+import {NotificationsOutlinedIcon, SearchIcon, SettingsOutlinedIcon} from "../utils/icons";
 
 
-import SearchIcon from '@mui/icons-material/Search';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+
 
 const AppNavbar = () => {
     return (
@@ -43,13 +42,6 @@ const AppNavbar = () => {
                                         <NotificationsOutlinedIcon fontSize="medium" color="secondary"/>
                                     </Badge>
                                 </Box>
-                                {/*<Tooltip title="Open settings">*/}
-                                {/*    <IconButton*/}
-                                {/*        disableRipple*/}
-                                {/*        sx={{p: 0}}*/}
-                                {/*    >*/}
-                                {/*    </IconButton>*/}
-                                {/*</Tooltip>*/}
                             </SBox>
                         </Grid>
                     </Grid>

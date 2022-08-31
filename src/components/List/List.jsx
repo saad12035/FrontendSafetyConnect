@@ -1,31 +1,32 @@
-import React from 'react';
-import {ListItemButton, ListItemIcon, ListItemText,List} from "@mui/material";
-import InboxIcon from '@mui/icons-material/Inbox';
+import React, {useState} from 'react';
+import {ListItemButton, ListItemIcon, ListItemText, List} from "@mui/material";
+
+
 
 function MList(props) {
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
+    const [selectedIndex, setSelectedIndex] = useState(1);
     const handleListItemClick = (event, index) => {
         setSelectedIndex(index);
     };
     return (
         <>
-        <List component="nav">
             {
                 props.list.map((items,value)=>{
                     return(
+                        <List key={value} component="nav">
                         <ListItemButton
                             selected={selectedIndex === value}
                             onClick={(event) => handleListItemClick(event, value)}
                         >
-                            <ListItemIcon>
+                            <ListItemIcon sx={{ color:"grey.500"}}>
                                 {items.icon}
                             </ListItemIcon>
-                            <ListItemText primary={items.title} />
+                            <ListItemText primaryTypographyProps={{fontSize: '1rem',color:"grey.500"}} primary={items.title} />
                         </ListItemButton>
+                        </List>
                     );
                 })
             }
-        </List>
         </>
     );
 }

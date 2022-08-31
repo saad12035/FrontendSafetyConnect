@@ -1,8 +1,8 @@
 import React from 'react';
 import {Grid, List, ListItem, ListItemButton, ListItemText, Typography} from "@mui/material";
 import {CCheckbox, IListContainer, ITitleContainer} from "./InspectionScore.styles";
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import {RadioButtonCheckedIcon, RadioButtonUncheckedIcon} from "../../utils/icons";
+
 
 const inspectionDetails=[
     {

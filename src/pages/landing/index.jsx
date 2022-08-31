@@ -1,5 +1,5 @@
 import React from 'react';
-import {Avatar, Divider, Grid,MenuItem, Paper, Select, Typography} from "@mui/material";
+import {Avatar, Divider, Grid, MenuItem, Paper, Select, Typography} from "@mui/material";
 import {HomeGrid, ListGridItems} from "./Layout.styles";
 import {Box} from "@mui/system";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
@@ -7,7 +7,15 @@ import {GeneratorImage} from "../../assets/images";
 import InspectionScore from "../../components/InspectionScore/InspectionScore";
 import Button from "../../components/Buttons/Button";
 import MList from "../../components/List/List";
-import HomeIcon from '@mui/icons-material/Home';
+import {
+    AssignmentIcon,
+    HealingIcon,
+    HomeIcon,
+    ListAltIcon,
+    SplitscreenIcon
+} from "../../utils/icons";
+import NestedList from "../../components/List/NestedList";
+
 
 const itemsDetails = [
     {
@@ -65,10 +73,35 @@ const menuItems = [
         icon: <HomeIcon/>,
     },
     {
-        title: "Home ",
-        icon: <HomeIcon/>,
+        title: "My Responsibilities",
+        icon: <ListAltIcon/>,
+    },
+    {
+        title: "Observation & Feedback",
+        icon: <HealingIcon/>,
+    },
+    {
+        title: "Learning Management",
+        icon: <SplitscreenIcon/>,
+    },
+    {
+        title: "Incident Management",
+        icon: <AssignmentIcon/>,
     },
 ]
+const projectItems = [
+    {
+        title: "Alpha Projects",
+        icon: <HomeIcon/>,
+    },
+    {
+        title: "Beta Projects",
+        icon: <ListAltIcon/>,
+    },
+]
+
+
+
 function Landing() {
 
     function getItemDetailsDesktop() {
@@ -93,6 +126,7 @@ function Landing() {
                 );
             }));
     }
+
     function getItemDetailsMobile() {
         return (
             itemsDetails.map((item) => {
@@ -137,59 +171,78 @@ function Landing() {
                 );
             }));
     }
+
     function getSubmissionDeatilsMobile() {
         return (
-                submissionDetails.map((details) => {
-                    return (
-                        <>
-                            <Grid item xs={6}>
-                                <Typography textAlign="start" color="black" variant="body2" fontWeight="bold">
-                                    {details.title}
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={6}>
-                                <Typography textAlign="end" color="grey.600" variant="body2">
-                                    {details.inputType}
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} mt={1} mb={2}>
-                                <Divider/>
-                            </Grid>
-                        </>
-                    );
-                })
+            submissionDetails.map((details) => {
+                return (
+                    <>
+                        <Grid item xs={6}>
+                            <Typography textAlign="start" color="black" variant="body2" fontWeight="bold">
+                                {details.title}
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Typography textAlign="end" color="grey.600" variant="body2">
+                                {details.inputType}
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12} mt={1} mb={2}>
+                            <Divider/>
+                        </Grid>
+                    </>
+                );
+            })
         );
     }
 
     return (
         <HomeGrid container>
-            <Box component={Grid} item display={{xs: "none", lg: "grid"}} lg={2}>
+            <Box component={Grid} item display={{xs: "none", lg: "grid"}} lg={2.5}>
                 <Paper style={{minHeight: 900}} elevation={3}>
-                    <Grid container padding="20px" >
-                        <Grid item md={2} mt={2} >
-                            <Avatar alt="Remy Sharp" />
+                    <Grid container padding="20px">
+                        <Grid item md={2} ml={4} mt={2}>
+                            <Avatar alt="Remy Sharp"/>
                         </Grid>
                         <Grid item md={7} ml={3}>
-                            <Typography color="primary.custom" variant="h5" fontWeight="600">Welcome ! <br/>John Doe</Typography>
+                            <Typography color="primary.custom" variant="h5" fontWeight="600">Welcome ! <br/>John
+                                Doe</Typography>
                         </Grid>
                         <Grid item md={12} mt={3}>
-                           <Button
-                               text="Create New +"
-                               backgroundColor="rgb(17, 37, 101)"
-                               color="white"
-                               fontSize="1.5rem"
-                               borderRadius="50"
-                               width="100%"
-                           />
+                            <Button
+                                text="Create New +"
+                                backgroundColor="rgb(17, 37, 101)"
+                                color="white"
+                                fontSize="1.5rem"
+                                borderRadius="50"
+                                width="100%"
+                            />
                         </Grid>
                         <Grid item md={12} mt={3}>
-                           <MList list={menuItems}/>
+                            <MList list={menuItems}/>
+                            <Divider sx={{width: "100%"}}/>
+                            <NestedList name="Your Projects" subList={projectItems}/>
+                            <Divider sx={{width: "100%"}}/>
+                            <NestedList name="Team Members" subList={projectItems}/>
+                            <Grid container justifyContent="flex-end" spacing={1}>
+                                <Grid item>
+                                    <Avatar sx={{ bgcolor: "success.700" }}>
+                                        <Typography>+3</Typography>
+                                    </Avatar>
+                                </Grid>
+                                <Grid item>
+                                    <Avatar sx={{ bgcolor: "primary.custom" }}>
+                                        <Typography>+</Typography>
+                                    </Avatar>
+                                </Grid>
+                            </Grid>
+                            <Divider sx={{width: "100%" ,marginTop:2}}/>
                         </Grid>
                     </Grid>
                 </Paper>
             </Box>
             <Grid item xs={0} lg={0.2}/>
-            <Grid item xs={12} lg={9.8}>
+            <Grid item xs={12} lg={9.2}>
                 <Grid container display={{xs: "none", lg: "grid"}} spacing={{sm: 4}}>
                     <Grid item sm={12}>
                         <Paper style={{minHeight: 100, padding: 20}} elevation={0}>

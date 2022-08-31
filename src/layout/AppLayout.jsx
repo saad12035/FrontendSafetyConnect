@@ -1,7 +1,11 @@
+//Core imports
 import React from 'react';
-import AppNavbar from "./AppNavbar";
 import {Container, CssBaseline, Grid} from "@mui/material";
 import { Outlet } from "react-router-dom";
+
+//Local imports
+import AppNavbar from "./AppNavbar";
+
 function AppLayout() {
     return (
         <>

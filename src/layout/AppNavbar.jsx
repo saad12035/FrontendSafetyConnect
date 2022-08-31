@@ -1,4 +1,7 @@
+//Core imports
 import {Badge, Box, Grid, InputAdornment,Typography} from "@mui/material";
+
+//Local imports
 import {HBox, SBox, SHeaderAppBar, SHeaderToolbar,HTextField} from "./Layout.style";
 import {NotificationsOutlinedIcon, SearchIcon, SettingsOutlinedIcon} from "../utils/icons";
 

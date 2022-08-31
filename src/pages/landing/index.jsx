@@ -1,108 +1,21 @@
+//Core imports
 import React from 'react';
-import {Avatar, Divider, Grid, MenuItem, Paper, Select, Typography} from "@mui/material";
-import {HomeGrid, ListGridItems} from "./Layout.styles";
+import {Avatar, Divider, Grid, Paper,  Typography} from "@mui/material";
 import {Box} from "@mui/system";
+
+//Local imports
+import {HomeGrid, ListGridItems} from "./Layout.styles";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import {GeneratorImage} from "../../assets/images";
 import InspectionScore from "../../components/InspectionScore/InspectionScore";
 import Button from "../../components/Buttons/Button";
 import MList from "../../components/List/List";
-import {
-    AssignmentIcon,
-    HealingIcon,
-    HomeIcon,
-    ListAltIcon,
-    SplitscreenIcon
-} from "../../utils/icons";
 import NestedList from "../../components/List/NestedList";
+import {itemsDetails, menuItems, projectItems, submissionDetails} from "../../utils/data";
 
-
-const itemsDetails = [
-    {
-        title: "Inspection Id :",
-        value: "112233"
-    },
-    {
-        title: "Identification Number:",
-        value: "EV-01"
-    },
-    {
-        title: "Project:",
-        value: "Truck Loading Silo"
-    },
-    {
-        title: "Location:",
-        value: "Silo-2 "
-    },
-    {
-        title: "Due Date:",
-        value: "Mar 8, 2021 10:30 am"
-    },
-    {
-        title: "Inspection Date:",
-        value: "Mar 8, 2021 10:30 am"
-    },
-]
-const submissionDetails = [
-    {
-        title: "Inspection By: ",
-        inputType: <Typography>Saad Ali Ahsan</Typography>,
-    },
-    {
-        title: "Submitted To: ",
-        inputType:
-            <Select
-                id="submitted-to"
-                label="Age"
-                size="small"
-                color="primary"
-                defaultValue={10}
-                disabled={true}
-            >
-                <MenuItem value={10}>Mubasshir</MenuItem>
-            </Select>,
-    },
-    {
-        title: "Status: ",
-        inputType: <Typography>Pending Approval</Typography>,
-    },
-]
-const menuItems = [
-    {
-        title: "Home ",
-        icon: <HomeIcon/>,
-    },
-    {
-        title: "My Responsibilities",
-        icon: <ListAltIcon/>,
-    },
-    {
-        title: "Observation & Feedback",
-        icon: <HealingIcon/>,
-    },
-    {
-        title: "Learning Management",
-        icon: <SplitscreenIcon/>,
-    },
-    {
-        title: "Incident Management",
-        icon: <AssignmentIcon/>,
-    },
-]
-const projectItems = [
-    {
-        title: "Alpha Projects",
-        icon: <HomeIcon/>,
-    },
-    {
-        title: "Beta Projects",
-        icon: <ListAltIcon/>,
-    },
-]
 
 
 function Landing() {
-
     function getItemDetailsDesktop() {
         return (
             itemsDetails.map((item,value) => {
@@ -133,7 +46,6 @@ function Landing() {
                 );
             }));
     }
-
     function getItemDetailsMobile() {
         return (
             itemsDetails.map((item,value) => {
@@ -156,7 +68,6 @@ function Landing() {
                 );
             }));
     }
-
     function getSubmissionDetailsDesktop() {
         return (
             submissionDetails.map((item,value) => {
@@ -178,7 +89,6 @@ function Landing() {
                 );
             }));
     }
-
     function getSubmissionDeatilsMobile() {
         return (
             submissionDetails.map((details,value) => {
@@ -202,7 +112,6 @@ function Landing() {
             })
         );
     }
-
     return (
         <HomeGrid container>
             <Box component={Grid} item display={{xs: "none", lg: "grid"}} lg={2.5}>
@@ -329,7 +238,6 @@ function Landing() {
                                     />
                                 </Grid>
                             </Grid>
-
                         </Grid>
                     </Paper>
                 </Grid>

@@ -1,76 +1,49 @@
+//Core imports
 import React from 'react';
 import {Grid, List, ListItem, ListItemButton, ListItemText, Typography} from "@mui/material";
-import {CCheckbox, IListContainer, ITitleContainer} from "./InspectionScore.styles";
+
+//Local imports
+import {CCheckbox, IListContainer, InspectionScoreSlider, ITitleContainer} from "./InspectionScore.styles";
 import {RadioButtonCheckedIcon, RadioButtonUncheckedIcon} from "../../utils/icons";
+import {inspectionDetails} from "../../utils/data";
 
 
-const inspectionDetails=[
-    {
-        primaryText:"Physical condition of body is good & sound. ",
-        secondaryText:"Dust and Dirt shall be removed.",
-        status:"Yes",
-        color:"green",
-    },
-    {
-        primaryText:"Physical condition of body is good & sound. ",
-        secondaryText:"Dust and Dirt shall be removed.",
-        status:"Yes",
-        color:"green",
-    },
-    {
-        primaryText:"Physical condition of body is good & sound. ",
-        secondaryText:"Dust and Dirt shall be removed.",
-        status:"Yes",
-        color:"green",
-    },
-    {
-        primaryText:"Physical condition of body is good & sound. ",
-        secondaryText:"Dust and Dirt shall be removed.",
-        status:"Yes",
-        color:"green",
-    },
-    {
-        primaryText:"Physical condition of body is good & sound. ",
-        secondaryText:"Dust and Dirt shall be removed.",
-        status:"Yes",
-        color:"green",
-    },
-    {
-        primaryText:"Physical condition of body is good & sound. ",
-        secondaryText:"Dust and Dirt shall be removed.",
-        status:"Yes",
-        color:"green",
-    },
-    {
-        primaryText:"Physical condition of body is good & sound. ",
-        secondaryText:"Dust and Dirt shall be removed.",
-        status:"No",
-        color:"red",
-    },
 
-]
 
 function InspectionScore() {
     return (
         <Grid container>
             <ITitleContainer container>
-                <Grid item>
+                <Grid item xs={6} md={6}>
                     <Typography variant="body1" fontWeight="600">Inspection Score:</Typography>
+                </Grid>
+                <Grid item xs={6} md={6}>
+                    <InspectionScoreSlider
+                        size="small"
+                        disabled={true}
+                        defaultValue={50}
+                        aria-label="Small"
+                        valueLabelDisplay="on"
+                        marks={[{
+                            value: 50,
+                            label: 'Not Satisfactory',
+                        },]}
+                    />
                 </Grid>
             </ITitleContainer>
             <IListContainer container>
                 <Grid item md={12}>
-                    <List style={{maxHeight:400,overflowY:"scroll"}}>
+                    <List>
                         {
-                            inspectionDetails.map((item,value)=>{
-                                return(
+                            inspectionDetails.map((item, value) => {
+                                return (
                                     <ListItem
                                         key={value}
                                         secondaryAction={
                                             <CCheckbox
-                                                icon={<RadioButtonUncheckedIcon />}
-                                                checkedIcon={<RadioButtonCheckedIcon />}
-                                                style={{color:item.color}}
+                                                icon={<RadioButtonUncheckedIcon/>}
+                                                checkedIcon={<RadioButtonCheckedIcon/>}
+                                                style={{color: item.color}}
                                                 edge="end"
                                                 checked={true}
                                                 disabled={true}
@@ -78,10 +51,10 @@ function InspectionScore() {
                                         }
                                         disablePadding
                                     >
-                                        <ListItemButton >
+                                        <ListItemButton>
                                             <ListItemText
-                                                style={{marginRight:20}}
-                                                primary={(value+1)+". "+item.primaryText}
+                                                style={{marginRight: 20}}
+                                                primary={(value + 1) + ". " + item.primaryText}
                                                 secondary={item.secondaryText}
                                             />
                                             <Typography color={item.color}>{item.status}</Typography>

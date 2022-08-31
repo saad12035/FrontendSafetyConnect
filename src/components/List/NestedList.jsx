@@ -1,6 +1,10 @@
+//Core imports
 import React, {useState} from 'react';
 import {Collapse, List, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
+
+//Local imports
 import {ExpandLessIcon, ExpandMoreIcon} from "../../utils/icons";
+import {NestedListContainer} from "./List.styles";
 
 
 function NestedList(props) {
@@ -9,8 +13,7 @@ function NestedList(props) {
         setOpen(!open);
     };
     return (
-        <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+        <NestedListContainer
             component="nav"
         >
             <ListItemButton onClick={handleClick}>
@@ -33,7 +36,7 @@ function NestedList(props) {
                     })
                 }
             </Collapse>
-        </List>
+        </NestedListContainer>
     );
 }
 

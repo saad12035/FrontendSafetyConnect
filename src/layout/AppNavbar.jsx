@@ -41,11 +41,8 @@ const AppNavbar = () => {
             <SHeaderAppBar position="static" color="inherit" elevation={0}>
                 <SHeaderToolbar disableGutters>
                     <Grid container>
-                            <Box
-                                component={Grid}
-                                item
-                                xs={3}
-                                sx={{
+                            <Box component={Grid} item xs={3}
+                                 sx={{
                                     display: {xs: 'grid', sm: 'none'},
                                 }}
                             >
@@ -66,7 +63,7 @@ const AppNavbar = () => {
                                     </IconButton>
                                     <Divider />
                                     <List>
-                                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                                        {['All mail', 'Trash', 'Spam'].map((text, ) => (
                                             <ListItem key={text} disablePadding>
                                                 <ListItemButton>
                                                     <ListItemIcon>
@@ -79,7 +76,7 @@ const AppNavbar = () => {
                                     </List>
                                 </Drawer>
                             </Box>
-                        <Grid item xs={6} sm={3} lg={3}>
+                        <Grid item xs={9} sm={3} lg={3}>
                             <HBox flexWrap="wrap">
                                 <Typography fontWeight="400" variant="h5" color="secondary">Safety Connect</Typography>
                             </HBox>

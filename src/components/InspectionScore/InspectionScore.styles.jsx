@@ -19,12 +19,20 @@ export const IListContainer = styled(Grid)(({theme: {spacing, palette}}) => ({
 )
 export const InspectionScoreSlider = styled(Slider)(() => ({
         opacity: 1,
-        color: "lightgrey",
-        backgroundImage: "linear-gradient(to right, red, orange)"
+        ".MuiSlider-thumb": {
+           color:"transparent"
+        },
+        ".MuiSlider-track": {
+            display: "none"
+        },
+        ".MuiSlider-rail": {
+            display: "none"
+        },
+        backgroundImage: "linear-gradient(to right, red 40%, orange 80%,  green 90%)"
     })
 )
 
 
-export const CCheckbox = styled(Checkbox)(({theme: {spacing}}) => ({})
+export const CCheckbox = styled(Checkbox)(() => ({})
 )
 

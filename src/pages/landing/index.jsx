@@ -177,8 +177,8 @@ function Landing() {
                     </Grid>
                     <Grid item sm={12}>
                         <Paper style={{minHeight: 750}} elevation={3}>
-                            <Typography pt={5} variant="h5" textAlign="center" fontWeight="bold" color="primary.custom">Electrical
-                                Vibrator</Typography>
+                            <Typography pt={5} mt={2} variant="h5" textAlign="center" fontWeight="bold" color="primary.custom">Electrical
+                                Generator</Typography>
                             <Typography variant="body2" textAlign="center" fontWeight="500" color="grey.800">Inspection
                                 Summary</Typography>
                             <Grid container pt={5}>
@@ -211,9 +211,9 @@ function Landing() {
                 </Grid>
                 <Grid container width="100%" mb={5} display={{xs: "grid", lg: "none"}}>
                     <Paper style={{minHeight: 100}} elevation={3}>
-                        <Grid item xs={12}>
+                        <Grid item mt={2} xs={12}>
                             <Typography variant="h5" textAlign="center" fontWeight="500" color="primary.custom">Electrical
-                                Vibrator</Typography>
+                                Generator</Typography>
                             <Typography variant="body2" textAlign="center" fontWeight="500" color="grey.500">Audit
                                 Summary</Typography>
                             <Grid container padding={2}>

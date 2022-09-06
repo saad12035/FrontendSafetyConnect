@@ -18,7 +18,7 @@ function AppLayout() {
                 <Grid container display="flex" direction="column" minHeight="90vh">
                     <Grid
                         item
-                        sx={{ paddingTop: "20px",ml:-2}}
+                        sx={{ paddingTop: "20px"}}
                     >
                         <Outlet />
                     </Grid>

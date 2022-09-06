@@ -18,17 +18,7 @@ function InspectionScore() {
                     <Typography variant="body1" fontWeight="600">Inspection Score:</Typography>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <InspectionScoreSlider
-                        size="small"
-                        disabled={true}
-                        defaultValue={50}
-                        aria-label="Small"
-                        valueLabelDisplay="on"
-                        marks={[{
-                            value: 50,
-                            label: 'Not Satisfactory',
-                        },]}
-                    />
+
                 </Grid>
             </ITitleContainer>
             <IListContainer container>
